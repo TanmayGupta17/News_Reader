@@ -1,11 +1,14 @@
-# # 8d8b867acc184e19b9230729c6837471
-
 import requests
 import os
 from os import system
 
 newsapi_key = "8d8b867acc184e19b9230729c6837471"
-url = "https://newsapi.org/v2/everything?q=Apple&from=2024-06-11&sortBy=popularity&apiKey=8d8b867acc184e19b9230729c6837471"
+
+# Get the topic from the user
+topic = input("Enter the news topic to search: ")
+
+# Use the topic in the URL
+url = f"https://newsapi.org/v2/everything?q={topic}&from=2024-06-11&sortBy=popularity&apiKey={newsapi_key}"
 response = requests.get(url).json()
 
 article = response["articles"]
